@@ -24,7 +24,7 @@ class Topics {
         val topicFile = File("${topicDirectory}/$topicName")
         if(topicFile.exists()){
             deleteIfExists(topicFile.toPath())
-            println("Deleted topic $topicName in ${topicFile.absolutePath}")
+            println("Deleted topic \"$topicName\" in ${topicFile.absolutePath}")
             return "Deleted topic \"$topicName\""
         } else {
             return "Failed to delete \"$topicName\": Topic does not exist"
@@ -35,8 +35,8 @@ class Topics {
         println(topicName)
         val topicFile = File("${topicDirectory}/$topicName")
         if(!topicFile.exists()){
-            println("Failed to send message in $topicName. File does not exist: ${topicFile.absolutePath}")
-            return "Failed to send message in $topicName: Topic does not exist"
+            println("Failed to send message in \"$topicName\". File does not exist: ${topicFile.absolutePath}")
+            return "Failed to send message in \"$topicName\": Topic does not exist"
         } else {
             val messages = topicFile.readText()
             if(messages != "" && messages != "[]") {
@@ -56,18 +56,22 @@ class Topics {
 
     fun receiveMessage(topic: String): String{
         val topicFile = File("${topicDirectory}/$topic")
-        val messages = topicFile.readText()
-        if(messages != "" && messages != "[]"){
-            val parsedMessages = Json.decodeFromString<MutableList<Serialization.Messages>>(messages)
-            val message = parsedMessages.first().message
-            parsedMessages.removeFirst()
-            topicFile.writeText(Json.encodeToJsonElement(parsedMessages).toString())
-            return Json.encodeToString(message)
+        if(!topicFile.exists()){
+            println("Failed to read topic \"$topic\". File does not exist: ${topicFile.absolutePath}")
+            return "Failed to receive message from \"$topic\": Topic does not exist"
         } else {
-            return "There is no messages in topic"
+            val messages = topicFile.readText()
+            if (messages != "" && messages != "[]") {
+                val parsedMessages = Json.decodeFromString<MutableList<Serialization.Messages>>(messages)
+                val message = parsedMessages.first().message
+                parsedMessages.removeFirst()
+                topicFile.writeText(Json.encodeToJsonElement(parsedMessages).toString())
+                return Json.encodeToString(message)
+            } else {
+                return "There is no messages in topic"
+            }
+
         }
-
-
     }
 
 }
