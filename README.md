@@ -2,7 +2,7 @@
 Simple message broker written in Kotlin
 # Installing:
 ## Using Docker-compose:
-create docker-compose.yml in your directory with release jar file
+Create docker-compose.yml in your directory with release jar file
 ```YAML
 services:
   kotlin-message-broker:
@@ -16,6 +16,10 @@ services:
     ports:
       - "5000:5000"
     restart: unless-stopped
+```
+Run:
+```
+docker-compose up
 ```
 ## Using Dockerfile:
 TODO
