@@ -7,7 +7,7 @@ Create docker-compose.yml in your directory with release jar file
 services:
   kotlin-message-broker:
     image: eclipse-temurin:21-jdk
-    container_name: java-app
+    container_name: kotlin-message-broker
     volumes:
       - ./path-to-jar-file.jar:/app/path-to-jar-file.jar
     environment:
