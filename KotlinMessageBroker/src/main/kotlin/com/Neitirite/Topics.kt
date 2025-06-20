@@ -15,7 +15,7 @@ class Topics {
             println("Created topic $topicName in ${topicFile.absolutePath}")
             return "Created topic \"$topicName\""
         } else {
-            return "joined to the existing topic \"$topicName\""
+            return "Joined to the existing topic \"$topicName\""
         }
 
     }
