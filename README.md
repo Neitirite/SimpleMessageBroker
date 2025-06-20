@@ -22,6 +22,7 @@ TODO
 
 ## System native (not recommended)
 Add new system environment TOPICS_PATH=<path-to-your-topic-directory>
+
 Run with java 21:
 ```
 java -jar <path-to-jar-file.jar>
