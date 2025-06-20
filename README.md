@@ -49,7 +49,7 @@ Connect to the broker via websockets (ws://ip:port), default port is 5000
 }
 ```
 ### Receive:
-If topic not exists:
+If topic doesn't exists:
 ```
 Created topic "<YourTopicName>"
 ```
@@ -75,7 +75,7 @@ If topic exists:
 ```
 Deleted topic "<YourTopicName>"
 ```
-If topic not exists:
+If topic doesn't exists:
 ```
 Failed to delete "<YourTopicName>": Topic does not exist
 ```
@@ -103,7 +103,7 @@ If topic exists:
 ```
 Succesfully sent message <YourMessage> in "<YourTopicName>"
 ```
-If topic not exists:
+If topic doesn't exists:
 ```
 Failed to send message in "<YourTopicName>": Topic does not exist
 ```
@@ -132,7 +132,7 @@ If there are no messages in the topic:
 ```
 There is no messages in topic
 ```
-If topic not exists:
+If topic doesn't exists:
 ```
 Failed to receive message from "<YourTopicName": Topic does not exist
 ```
