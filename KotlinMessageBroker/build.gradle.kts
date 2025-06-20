@@ -22,6 +22,20 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.jar {
+    manifest{
+        attributes["Main-Class"] = "com.Neitirite.MainKt"
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from({
+        configurations.runtimeClasspath.get().filter { it.exists() }.map {
+            if (it.isDirectory) it else zipTree(it)
+        }
+    })
+}
+
 kotlin {
     jvmToolchain(21)
 }
+
