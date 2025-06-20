@@ -15,7 +15,7 @@ class Topics {
             println("Created topic $topicName in ${topicFile.absolutePath}")
             return "Created topic \"$topicName\""
         } else {
-            return "joined to the existing topic $topicName"
+            return "joined to the existing topic \"$topicName\""
         }
 
     }
@@ -27,7 +27,7 @@ class Topics {
             println("Deleted topic $topicName in ${topicFile.absolutePath}")
             return "Deleted topic \"$topicName\""
         } else {
-            return "Failed to delete $topicName: Topic does not exist"
+            return "Failed to delete \"$topicName\": Topic does not exist"
         }
     }
 
@@ -50,7 +50,7 @@ class Topics {
                 val updatedMessages = Json.encodeToString(newMessage)
                 topicFile.writeText("[$updatedMessages]")
             }
-            return "Successfully sent message $message in $topicName"
+            return "Successfully sent message $message in \"$topicName\""
         }
     }
 
