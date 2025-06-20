@@ -39,7 +39,7 @@ java -jar <path-to-jar-file.jar>
 # Commands:
 Connect to the broker via websockets (ws://ip:port), default port is 5000
 ## Create topic:
-### send:
+### Send:
 ```JSON
 {
   "command":"createTopic",
@@ -48,7 +48,7 @@ Connect to the broker via websockets (ws://ip:port), default port is 5000
   }
 }
 ```
-### receive:
+### Receive:
 If topic not exists:
 ```
 Created topic "<YourTopicName>"
@@ -61,7 +61,7 @@ Else:
 You don't receive any message, see error in broker's console
 
 ## Delete topic:
-### send:
+### Send:
 ```JSON
 {
   "command":"deleteTopic",
@@ -70,7 +70,7 @@ You don't receive any message, see error in broker's console
   }
 }
 ```
-### receive:
+### Receive:
 If topic exists:
 ```
 Deleted topic "<YourTopicName>"
@@ -83,7 +83,7 @@ Else:
 You don't receive any message, see error in broker's console
 
 ## Send message:
-### send:
+### Send:
 ```JSON
 {
   "command":"sendMessage",
@@ -98,7 +98,7 @@ You don't receive any message, see error in broker's console
 
 **Note: Message content must be JSON object, NOT STRING**
 
-### receive:
+### Receive:
 If topic exists:
 ```
 Succesfully sent message <YourMessage> in "<YourTopicName>"
@@ -111,7 +111,7 @@ Else:
 You don't receive any message, see error in broker's console
 
 ## Receive message:
-### send:
+### Send:
 ```JSON
 {
   "command":"receiveMessage",
@@ -120,7 +120,7 @@ You don't receive any message, see error in broker's console
   }
 }
 ```
-### receive:
+### Receive:
 If topic exists:
   If there are messages in the topic:
 ```
