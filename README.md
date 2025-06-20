@@ -122,7 +122,7 @@ You don't receive any message, see error in broker's console
 ```
 ### Receive:
 If topic exists:
-  If there are messages in the topic:
+If there are messages in the topic:
 ```
 <YourMessage>
 ```
