@@ -21,7 +21,7 @@ Created topic "<YourTopicName>"
 ```
 If topic exists:
 ```
-joined to the existing topic "<YourTopicName>"
+Joined to the existing topic "<YourTopicName>"
 ```
 Else:
 You don't receive any message, see error in broker's console
@@ -93,7 +93,8 @@ If topic exists:
 <YourMessage>
 ```
   **Note: you'll receive message as STRING**
-  If there are no messages in the topic:
+
+If there are no messages in the topic:
 ```
 There is no messages in topic
 ```
