@@ -1,7 +1,33 @@
 # SimpleMessageBroker
 Simple message broker written in Kotlin
 # Installing:
+## Using Docker-compose:
+create docker-compose.yml in your directory with release jar file
+```YAML
+services:
+  kotlin-message-broker:
+    image: eclipse-temurin:21-jdk
+    container_name: java-app
+    volumes:
+      - ./path-to-jar-file.jar:/app/path-to-jar-file.jar
+    environment:
+      - TOPICS_PATH=/app/topics
+    command: ["java", "-jar", "/app/path-to-jar-file.jar"]
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+```
+## Using Dockerfile:
 TODO
+
+## System native (not recommended)
+Add new system environment TOPICS_PATH=<path-to-your-topic-directory>
+Run with java 21:
+```
+java -jar <path-to-jar-file.jar>
+```
+**Note: app uses port 5000, make sure it free to bind**
+
 # Commands:
 Connect to the broker via websockets (ws://ip:port), default port is 5000
 ## Create topic:
