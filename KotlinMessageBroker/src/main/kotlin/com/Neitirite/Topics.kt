@@ -32,7 +32,6 @@ class Topics {
     }
 
     fun sendMessage(topicName: String, message: JsonObject): String{
-        println(topicName)
         val topicFile = File("${topicDirectory}/$topicName")
         if(!topicFile.exists()){
             println("Failed to send message in \"$topicName\". File does not exist: ${topicFile.absolutePath}")

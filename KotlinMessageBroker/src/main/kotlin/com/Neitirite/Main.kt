@@ -39,8 +39,6 @@ fun main() {
                                         }
                                     }
                                     "sendMessage" -> {
-                                        println(command.properties["topic"]?.jsonPrimitive?.content)
-                                        println(command.properties["message"])
                                         val topic = command.properties["topic"]?.jsonPrimitive?.content
                                         val response = Topics().sendMessage(topic.toString(),
                                                 command.properties["message"] as JsonObject)
