@@ -10,9 +10,9 @@ services:
     container_name: kotlin-message-broker
     volumes:
       - ./path-to-jar-file.jar:/app/path-to-jar-file.jar
-      - ./path-to-your-topic-folder:/app/path-to-your-topic-folder
+      - ./path-to-your-topic-directory:/app/path-to-your-topic-directory
     environment:
-      - TOPICS_PATH=/app/path-to-your-topic-folder
+      - TOPICS_PATH=/app/path-to-your-topic-directory
     command: ["java", "-jar", "/app/path-to-jar-file.jar"]
     ports:
       - "5000:5000"
