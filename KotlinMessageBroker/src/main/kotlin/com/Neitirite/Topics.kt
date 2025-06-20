@@ -12,7 +12,7 @@ class Topics {
         val topicFile = File("${topicDirectory}/$topicName")
         if(!topicFile.exists()){
             topicFile.createNewFile()
-            println("Created topic $topicName in ${topicFile.absolutePath}")
+            println("Created topic \"$topicName\" in ${topicFile.absolutePath}")
             return "Created topic \"$topicName\""
         } else {
             return "Joined to the existing topic \"$topicName\""
