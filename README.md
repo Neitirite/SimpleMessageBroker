@@ -58,6 +58,7 @@ If topic exists:
 Joined to the existing topic "<YourTopicName>"
 ```
 Else:
+
 You don't receive any message, see error in broker's console
 
 ## Delete topic:
@@ -80,6 +81,7 @@ If topic doesn't exists:
 Failed to delete "<YourTopicName>": Topic does not exist
 ```
 Else:
+
 You don't receive any message, see error in broker's console
 
 ## Send message:
@@ -108,6 +110,7 @@ If topic doesn't exists:
 Failed to send message in "<YourTopicName>": Topic does not exist
 ```
 Else:
+
 You don't receive any message, see error in broker's console
 
 ## Receive message:
@@ -122,6 +125,7 @@ You don't receive any message, see error in broker's console
 ```
 ### Receive:
 If topic exists:
+
 If there are messages in the topic:
 ```
 <YourMessage>
@@ -137,4 +141,5 @@ If topic doesn't exists:
 Failed to receive message from "<YourTopicName": Topic does not exist
 ```
 Else:
+
 You don't receive any message, see error in broker's console
