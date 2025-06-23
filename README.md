@@ -139,7 +139,7 @@ There is no messages in topic
 ```
 If topic doesn't exists:
 ```
-Failed to receive message from "<YourTopicName": Topic does not exist
+Failed to receive message from "<YourTopicName>": Topic does not exist
 ```
 Else:
 
