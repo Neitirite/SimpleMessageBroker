@@ -7,6 +7,7 @@ group = "com.neitirite"
 version = "1.0"
 
 repositories {
+    google()
     mavenCentral()
 }
 
@@ -17,6 +18,8 @@ dependencies {
     implementation("io.ktor:ktor-server-websockets:3.1.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     implementation("org.slf4j:slf4j-simple:2.0.7")
+    implementation("androidx.sqlite:sqlite:2.5.2")
+    implementation("androidx.sqlite:sqlite-bundled:2.5.2")
 }
 
 tasks.test {

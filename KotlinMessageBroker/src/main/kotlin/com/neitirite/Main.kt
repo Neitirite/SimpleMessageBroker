@@ -1,4 +1,4 @@
-package com.Neitirite
+package com.neitirite
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -9,8 +9,10 @@ import io.ktor.websocket.*
 import kotlinx.serialization.json.*
 import kotlin.time.Duration.Companion.seconds
 
+val port = System.getenv("BROKER_PORT")?.toIntOrNull() ?: 5000
 fun main() {
-    embeddedServer(Netty, 5000, "0.0.0.0") {
+    Topics().createDB()
+    embeddedServer(Netty, port, "0.0.0.0") {
         install(WebSockets){
             pingPeriod = 15.seconds
             timeout = 30.seconds
@@ -29,13 +31,14 @@ fun main() {
                                 val command = Json.decodeFromString<Serialization.Command>(text)
                                 println("Received command: ${command.command}")
                                 when (command.command) {
-                                    "createTopic" -> {
+                                    "connectTopic" -> {
                                         val topic = command.properties["name"]?.jsonPrimitive?.content
                                         try {
-                                            val response = Topics().createTopic(topic.toString())
+                                            val response = Topics().connectTopic(topic.toString())
                                             send(response)
                                         } catch (e: Exception) {
-                                            println("Failed to create topic: ${e.message}")
+                                            println(e.message)
+                                            send(e.message ?: "Unknown error")
                                         }
                                     }
                                     "sendMessage" -> {
@@ -44,13 +47,14 @@ fun main() {
                                                 command.properties["message"] as JsonObject)
                                         send(response)
                                     }
-                                    "deleteTopic" -> {
+                                    "closeTopic" -> {
                                         val topic = command.properties["name"]?.jsonPrimitive?.content
                                         try {
-                                            val response = Topics().deleteTopic(topic.toString())
+                                            val response = Topics().closeTopic(topic.toString())
                                             send(response)
                                         } catch (e: Exception) {
-                                            println("Failed to delete topic: ${e.message}")
+                                            println("${e.message}")
+                                            send(e.message ?: "Unknown error")
                                         }
                                     }
                                     "receiveMessage" -> {
@@ -59,7 +63,8 @@ fun main() {
                                             val response = Topics().receiveMessage(topic.toString())
                                             send(response)
                                         } catch (e: Exception) {
-                                            println("Failed to receive message: ${e.message}")
+                                            println(e.message)
+                                            send(e.message ?: "Unknown error")
                                         }
                                     }
                                 }
