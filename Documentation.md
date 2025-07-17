@@ -25,7 +25,7 @@
 }
 ```
 ##### Creates topic if not exists
-Creates table "YourTopicName" in database
+Creates table "YourTopicName" in database.
 Returns "200" or SQL error
 #### Close topic
 ```JSON
@@ -37,7 +37,7 @@ Returns "200" or SQL error
 }
 ```
 ##### Removes  topic if exists
-Drops table "YourTopicName" in database
+Drops table "YourTopicName" in database.
 Returns "200" or SQL error
 
 #### Send message
@@ -59,7 +59,7 @@ Returns "200" or SQL error
 }
 ```
 ##### Sends message in topic
-Generates UUID for message, gets timestamp and adds a record in table "YourTopicName"
+Generates UUID for message, gets timestamp and adds a record in table "YourTopicName".
 Returns "200" or SQL error
 ###### Example:
 
