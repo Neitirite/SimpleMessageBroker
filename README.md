@@ -12,9 +12,9 @@ TODO
 
 ### System native (not recommended)
 Add new system environments: 
-```
-TOPICS_DB="path-to-your-topic-database.db"
-BROKER_PORT=5000 //Optional. Default port is 5000
+```bash
+export TOPICS_DB="path-to-your-topic-database.db"
+export BROKER_PORT=5000 #Optional. Default port is 5000
 ```
 
 Run with java 21:
