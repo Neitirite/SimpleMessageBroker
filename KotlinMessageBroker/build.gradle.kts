@@ -28,7 +28,7 @@ tasks.test {
 
 tasks.jar {
     manifest{
-        attributes["Main-Class"] = "com.Neitirite.MainKt"
+        attributes["Main-Class"] = "com.neitirite.MainKt"
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({
