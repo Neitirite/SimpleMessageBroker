@@ -46,7 +46,8 @@ Returns "200" or SQL error
     "command":"sendMessage",
     "properties":{
         "topic": "YourTopicName",
-        "message": { //example JSON message. !MUST BE JSON ELEMENT, NOT STRING!
+        "message": { 
+            "_comment":"example JSON message. !MUST BE JSON ELEMENT, NOT STRING!"
             "command":"register", 
             "properties":{
             "name":"name",
