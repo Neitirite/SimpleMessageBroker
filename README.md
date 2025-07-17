@@ -13,7 +13,7 @@ TODO
 ### System native (not recommended)
 Add new system environment: 
 ```
-TOPICS_PATH="<path-to-your-topic-directory>"
+TOPICS_DB="<path-to-your-topic-database.db>"
 ```
 
 Run with java 21:
