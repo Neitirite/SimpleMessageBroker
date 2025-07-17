@@ -11,15 +11,15 @@ docker-compose up
 TODO
 
 ### System native (not recommended)
-Add new system environment: 
+Add new system environments: 
 ```
-TOPICS_DB="<path-to-your-topic-database.db>"
+TOPICS_DB="path-to-your-topic-database.db"
+BROKER_PORT=5000 //Optional. Default port is 5000
 ```
 
 Run with java 21:
 ```
-java -jar <path-to-jar-file.jar>
+java -jar path-to-jar-file.jar
 ```
-**Note: app uses port 5000, make sure it free to bind**
 ## How to use?
 See [Documentation](https://github.com/Neitirite/SimpleMessageBroker/blob/main/Documentation.md)
