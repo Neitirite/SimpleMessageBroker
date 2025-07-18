@@ -2,16 +2,8 @@
 ---
 ## Documentation for v2.0
 
-### Database
-
-*Each topic has its own table*
-#### Topic table structure
-
-| Field        | Type |
-| ------------ | ---- |
-| Message_UUID | Text |
-| Message      | Text |
-| Timestamp    | Text |
+### Using
+Connect to the broker via websockets, then just send messages described below
 
 ### Message format
 
@@ -96,3 +88,15 @@ No messages found
 Put here path to database file. File may not exist
 #### BROKER_PORT
 Specify here the preferred port for the broker
+
+
+### Database
+
+*Each topic has its own table*
+#### Topic table structure
+
+| Field        | Type |
+| ------------ | ---- |
+| Message_UUID | Text |
+| Message      | Text |
+| Timestamp    | Text |
