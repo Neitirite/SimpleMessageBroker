@@ -2,9 +2,8 @@
 Simple message broker written in Kotlin
 ## Installing:
 ### Using Docker-compose:
-Use docker-compose.yml attached to the release
-Run:
-```
+Use docker-compose.yml attached to the release and run:
+```bash
 docker-compose up
 ```
 ### Using Dockerfile:
@@ -18,7 +17,7 @@ export BROKER_PORT=5000 #Optional. Default port is 5000
 ```
 
 Run with java 21:
-```
+```bash
 java -jar path-to-jar-file.jar
 ```
 ## How to use?
