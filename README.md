@@ -2,7 +2,7 @@
 Simple message broker written in Kotlin
 ## Installing:
 ### Using Docker-compose:
-Use docker-compose.yml attached to the release and run:
+Use docker-compose.yml attached to the release. Run:
 ```bash
 docker-compose up
 ```
