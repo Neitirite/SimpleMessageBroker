@@ -21,7 +21,7 @@ Creates table "YourTopicName" in database.
 Returns "200" or SQL error
 <br>
 </br>
-**Please note that topic names aren't case sensitive, so for example "YourTopicName" will be equal to "yourtopicname"**
+**Please note that the topic names aren't case sensitive, so for example "YourTopicName" will be equal to "yourtopicname"**
 #### Close topic
 ```JSON
 {
