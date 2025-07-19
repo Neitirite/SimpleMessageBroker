@@ -19,6 +19,9 @@ Connect to the broker via websockets, then just send messages described below
 ##### Creates topic if not exists
 Creates table "YourTopicName" in database.
 Returns "200" or SQL error
+<br>
+</br>
+**Please note that topic names aren't case sensitive, so for example "YourTopicName" will be equal to "yourtopicname"**
 #### Close topic
 ```JSON
 {
