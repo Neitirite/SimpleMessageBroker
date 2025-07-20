@@ -78,7 +78,7 @@ Selects first record from table "YourTopicName", sends values and drops it
 ```JSON
 {
 "UUID":"abb5da28-b3e7-416f-8419-05785162a69a",
-message":"{\"command\":\"register\",\"properties\":{\"name\":\"name\",\"surname\":\"surname\",\"group\":\"group\",\"password\":\"password\"}}"
+"message":"{\"command\":\"register\",\"properties\":{\"name\":\"name\",\"surname\":\"surname\",\"group\":\"group\",\"password\":\"password\"}}"
 }
 ```
 Or:
