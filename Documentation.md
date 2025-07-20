@@ -12,7 +12,7 @@ Connect to the broker via websockets, then just send messages described below
 {
     "command":"connectTopic",
     "properties":{
-    "name":"YourTopicName"
+        "name":"YourTopicName"
     }
 }
 ```
@@ -27,8 +27,8 @@ Returns "200" or SQL error
 {
     "command":"closeTopic",
     "properties":{
-    "name":"YourTopicName"
-	}
+        "name":"YourTopicName"
+    }
 }
 ```
 ##### Removes  topic if exists
@@ -45,13 +45,13 @@ Returns "200" or SQL error
             "_comment":"example JSON message. !MUST BE JSON ELEMENT, NOT STRING!"
             "command":"register", 
             "properties":{
-            "name":"name",
-            "surname":"surname",
-            "group":"group",
-            "password":"password",
+                "name":"name",
+                "surname":"surname",
+                "group":"group",
+                "password":"password",
             }
         }
-	}
+    }
 }
 ```
 ##### Sends message in topic
@@ -68,7 +68,7 @@ Returns "200" or SQL error
 {
     "command":"receiveMessage",
     "properties":{
-	    "topic": "YourTopicName"
+        "topic": "YourTopicName"
     }
 }
 ```
